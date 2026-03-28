@@ -1,5 +1,6 @@
 import logging
 import requests
+import os
 from datetime import datetime, timezone
 from collections import defaultdict
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
@@ -8,8 +9,8 @@ from telegram.ext import Application, CommandHandler, CallbackQueryHandler, Cont
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-TELEGRAM_TOKEN = "8340283835:AAGdm3lvFrm1iPxvul5ek6Xqnjg0q_45QQc"
-SPORTS_API_TOKEN = "RB5JZRt31uOdrJHSIO4llP6Yqh4bjoRfWCYOAAivMs0OdpQR621vrvsiYt60"
+TELEGRAM_TOKEN   = os.environ["TELEGRAM_TOKEN"]
+SPORTS_API_TOKEN = os.environ["SPORTS_API_TOKEN"]
 BASE_URL = "https://cricket.sportmonks.com/api/v2.0"
 
 TEAM_NAMES = {
